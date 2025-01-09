@@ -1,0 +1,212 @@
+body {
+}
+
+/* Navigation bar */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  font-family: 'Courier New';
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+  /* Add a color to visited link */
+.topnav a:visited {
+  color: black;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  border-radius: 15px;
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+}
+
+.hdr {
+  font-family: 'Courier New';
+  font-weight: bolder;
+  font-size: 35px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.hdr2 {
+  font-family: 'Courier New';
+  font-weight: bolder;
+  font-size: 35px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: left;
+}
+
+/* text types */
+
+/* normal text */
+p {
+  font-family: 'Courier New';
+  font-size: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: justify;
+}
+
+/* 2 col image hdr */
+p2 {
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* 2 col image desc */
+p3 {
+  font-family: 'Courier New';
+  font-size: 25px;
+  text-align: justify;
+}
+
+
+/* 2 column containers */
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-container2 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.img-container {
+  margin-left: 100px;
+}
+
+.text-container {
+  margin-right: 100px;
+  text-align: justify;
+}
+
+.center {
+  text-align: center;
+}
+/* Bullet list */
+
+.ul_code {
+  margin-left: 100px;
+}
+
+/* icons */
+
+/*.icon_desc{*/
+/*  font-family: 'Courier New';*/
+/*  font-size: 25px;*/
+/*  margin-left: 100px;*/
+/*  margin-right: 100px;*/
+/*  text-align: justify;*/
+/*  !*visibility: hidden;*!*/
+/*  opacity: 0;*/
+/*}*/
+
+img.icons{
+  transition: .2s;
+}
+
+img.icons:hover{
+  transform: scale(1.2);
+}
+
+.flex-container2:hover .icon_desc{
+  /*visibility: visible;*/
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Photo gallery stuff */
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Landscape gallery layout */
+.responsive1 {
+  padding: 0 1px;
+  float: left;
+  width: 33.333332%;
+}
+
+@media only screen and (max-width: 800px) {
+  .responsive1 {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive1 {
+    width: 100%;
+  }
+}
+
+/* Portrait gallery layout */
+.responsive2 {
+  padding: 0 1px;
+  float: right;
+  width: 19.99999%;
+}
+
+@media only screen and (max-width: 800px) {
+  .responsive2 {
+    width: 33.33332%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive2 {
+    width: 100%;
+  }
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+img.gallery{
+  transition: .3s;
+}
+
+img.gallery:hover{
+  transform: scale(1.2);
+}
+
+img.gallery:active{
+	pointer-events: none;
+}
