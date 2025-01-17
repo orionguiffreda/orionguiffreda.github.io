@@ -136,6 +136,16 @@ img.icons:hover{
   transform: scale(1.2);
 }
 
+/* Media */
+
+img.media{
+  transition: .2s;
+}
+
+img.media:hover{
+  transform: scale(1.07);
+}
+
 /* Photo gallery stuff */
 
 div.gallery {
