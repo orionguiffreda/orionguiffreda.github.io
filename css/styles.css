@@ -385,14 +385,14 @@ img.gallery:active{
   }
 
   .iframe-container {
-    height: 85vh;         /* Fill 90% of viewport height */
+    height: 70vh;         /* Fill 90% of viewport height */
     padding-top: 0;       /* Disable aspect ratio padding */
     max-height: none;     /* Allow taller height */
   }
 
 
   .iframe-container iframe {
-    height: 85vh;        /* Ensure iframe also stretches fully */
+    height: 70vh;        /* Ensure iframe also stretches fully */
   }
 
   .mobile-only {
