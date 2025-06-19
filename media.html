@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
     <title>Orion Guiffreda - Github Website - Code Page</title>
     <link rel="stylesheet" href="./css/styles.css">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth <= 768) {  // Only reorder on mobile
+          const nav = document.querySelector(".topnav");
+          const activeLink = nav.querySelector("a.active");
+          if (activeLink) {
+            nav.insertBefore(activeLink, nav.firstChild);
+          }
+        }
+      });
+    </script>
 </head>
+<script>
+  function toggleNav() {
+    var nav = document.querySelector(".topnav");
+    nav.classList.toggle("responsive");
+  }
+</script>
 <body>
     <nav>
         <div class="topnav">
@@ -15,6 +34,7 @@
           <a class="active" href="media.html">Media</a>
           <a href="photos.html">Photos</a>
           <a href="contact.html">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
         </div>
     </nav>
     <div class="hdr">
@@ -44,7 +64,7 @@
           </p3>
         </li>
       </ul>
-      <figure>
+      <figure class="poster">
         <a href="https://aas245-aas.ipostersessions.com/default.aspx?s=42-2F-07-AE-6B-1D-59-BD-EE-6B-20-39-6E-30-9C-CF&guestview=true">
           <img
             class="media"
@@ -74,7 +94,7 @@
           </p3>
         </li>
       </ul>
-      <figure>
+      <figure class="poster">
         <a href="https://aas246-aas.ipostersessions.com/default.aspx?s=AD-F4-10-E7-DD-36-AA-D3-2E-3C-A2-E3-2B-DD-17-A7&guestview=true">
           <img
             class="media"

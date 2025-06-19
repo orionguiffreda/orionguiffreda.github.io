@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
     <title>Orion Guiffreda - Github Website - Photos Page</title>
     <link rel="stylesheet" href="./css/styles.css">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth <= 768) {  // Only reorder on mobile
+          const nav = document.querySelector(".topnav");
+          const activeLink = nav.querySelector("a.active");
+          if (activeLink) {
+            nav.insertBefore(activeLink, nav.firstChild);
+          }
+        }
+      });
+    </script>
 </head>
+<script>
+  function toggleNav() {
+    var nav = document.querySelector(".topnav");
+    nav.classList.toggle("responsive");
+  }
+</script>
 <body>
     <nav>
         <div class="topnav">
@@ -15,6 +34,7 @@
           <a href="media.html">Media</a>
           <a class="active" href="photos.html">Photos</a>
           <a href="contact.html">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
         </div>
     </nav>
     <div class="hdr">
@@ -35,82 +55,80 @@
 <!--    </a>-->
 <!--  </div>-->
 <!--</div>-->
-<div class="responsive1">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02563.jpg">
-      <img class="gallery" src="./gallery/DSC02563.jpg" alt="underneath a bridge" width="1500" height="1000">
-    </a>
+<div class="gallery-container">
+  <div class="gallery-row">
+    <div class="gallery-block-3">
+      <a target="_blank" href="./gallery/DSC02563.jpg">
+        <img class="gallery" src="./gallery/DSC02563.jpg" alt="underneath a bridge">
+      </a>
+    </div>
+
+    <div class="gallery-block-3">
+      <a target="_blank" href="./gallery/DSC02851.jpg">
+        <img class="gallery" src="./gallery/DSC02851.jpg" alt="underneath a plane">
+      </a>
+    </div>
+
+    <div class="gallery-block-3">
+      <a target="_blank" href="./gallery/DSC02756.jpg">
+        <img class="gallery" src="./gallery/DSC02756.jpg" alt="man walking on bridge">
+      </a>
+    </div>
   </div>
 </div>
-<div class="responsive1">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02851.jpg">
-      <img class="gallery" src="./gallery/DSC02851.jpg" alt="underneath a plane" width="1500" height="1000">
-    </a>
+
+<div class="gallery-container">
+  <div class="gallery-row">
+    <div class="gallery-block-5">
+      <a target="_blank" href="./gallery/DSC02548.jpg">
+        <img class="gallery" src="./gallery/DSC02548.jpg" alt="cityscape under a bridge">
+      </a>
+    </div>
+
+    <div class="gallery-block-5">
+      <a target="_blank" href="./gallery/DSC02795.jpg">
+        <img class="gallery" src="./gallery/DSC02795.jpg" alt="a kite between 2 trees">
+      </a>
+    </div>
+
+    <div class="gallery-block-5">
+      <a target="_blank" href="./gallery/A6700555.jpg">
+        <img class="gallery" src="./gallery/A6700555.jpg" alt="sunset behind a bird statue">
+      </a>
+    </div>
+
+    <div class="gallery-block-5">
+      <a target="_blank" href="./gallery/DSC02678.jpg">
+        <img class="gallery" src="./gallery/DSC02678.jpg" alt="man sitting in front of sky">
+      </a>
+    </div>
+
+    <div class="gallery-block-5">
+      <a target="_blank" href="./gallery/A6700610.jpg">
+        <img class="gallery" src="./gallery/A6700610.jpg" alt="tree illuminated by sun through clouds">
+      </a>
+    </div>
   </div>
 </div>
-<div class="responsive1">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02756.jpg">
-      <img class="gallery" src="./gallery/DSC02756.jpg" alt="man walking on bridge" width="1500" height="1000">
-    </a>
-  </div>
-</div>
-<div class="responsive2">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02548.jpg">
-      <img class="gallery" src="./gallery/DSC02548.jpg" alt="cityscape under a bridge" width="900" height="1350">
-    </a>
-  </div>
-</div>
-<div class="responsive2">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02795.jpg">
-      <img class="gallery" src="./gallery/DSC02795.jpg" alt="a kite between 2 trees" width="900" height="1350">
-    </a>
-  </div>
-</div>
-<div class="responsive2">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/A6700555.jpg">
-      <img class="gallery" src="./gallery/A6700555.jpg" alt="sunset behind a bird statue" width="900" height="1350">
-    </a>
-  </div>
-</div>
-</body>
-<div class="responsive2">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02678.jpg">
-      <img class="gallery" src="./gallery/DSC02678.jpg" alt="man sitting in front of sky" width="900" height="1350">
-    </a>
-  </div>
-</div>
-</html>
-<div class="responsive2">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/A6700610.jpg">
-      <img class="gallery" src="./gallery/A6700610.jpg" alt="tree illuminated by sun through clouds" width="900" height="1350">
-    </a>
-  </div>
-</div>
-<div class="responsive1">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC01725.jpg">
-      <img class="gallery" src="./gallery/DSC01725.jpg" alt="portrait of statue" width="1500" height="1000">
-    </a>
-  </div>
-</div>
-<div class="responsive1">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC01203-2.jpg">
-      <img class="gallery" src="./gallery/DSC01203-2.jpg" alt="sunset in front of 3 trees" width="1500" height="1000">
-    </a>
-  </div>
-</div>
-<div class="responsive1">
-  <div class="gallery">
-    <a target="_blank" href="./gallery/DSC02685.jpg">
-      <img class="gallery" src="./gallery/DSC02685.jpg" alt="man sitting in front of sunset" width="1500" height="1000">
-    </a>
+
+<div class="gallery-container">
+  <div class="gallery-row">
+    <div class="gallery-block-3">
+      <a target="_blank" href="./gallery/DSC01725.jpg">
+        <img class="gallery" src="./gallery/DSC01725.jpg" alt="portrait of statue">
+      </a>
+    </div>
+
+    <div class="gallery-block-3">
+      <a target="_blank" href="./gallery/DSC01203-2.jpg">
+        <img class="gallery" src="./gallery/DSC01203-2.jpg" alt="sunset in front of 3 trees">
+      </a>
+    </div>
+
+    <div class="gallery-block-3">
+      <a target="_blank" href="./gallery/DSC02685.jpg">
+        <img class="gallery" src="./gallery/DSC02685.jpg" alt="man sitting in front of sunset">
+      </a>
+    </div>
   </div>
 </div>

@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
     <title>Orion Guiffreda - Github Website - Index Page</title>
     <link rel="stylesheet" href="./css/styles.css">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const nav = document.querySelector(".topnav");
+        const activeLink = nav.querySelector("a.active");
+        if (activeLink) {
+        nav.insertBefore(activeLink, nav.firstChild);
+        }
+      });
+    </script>
 </head>
+<script>
+  function toggleNav() {
+    var nav = document.querySelector(".topnav");
+    nav.classList.toggle("responsive");
+  }
+</script>
 <body>
     <nav>
         <div class="topnav">
@@ -15,6 +32,7 @@
           <a href="media.html">Media</a>
           <a href="photos.html">Photos</a>
           <a href="contact.html">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
         </div>
     </nav>
     <br>
@@ -34,7 +52,6 @@
     <figure class="center">
       <img
           src="./images/IMG_1673.jpeg"
-          style="display: block; margin: auto;"
           alt="Photo of me!."
           width="806"
           height="1075"
@@ -47,7 +64,6 @@
     <figure class="center">
       <img
           src="./images/IMG_9796.JPEG"
-          style="display: block; margin: auto;"
           alt="Photo of me with my AAS 245 poster!."
           width="1075"
           height="806"
@@ -60,7 +76,6 @@
     <figure class="center">
       <img
           src="./images/IMG_5244.JPEG"
-          style="display: block; margin: auto;"
           alt="Photo of me with my AAS 246 poster!."
           width="1075"
           height="806"

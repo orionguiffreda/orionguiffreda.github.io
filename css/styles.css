@@ -1,40 +1,70 @@
 body {
 }
 
-/* Navigation bar */
+/* Base styles */
 .topnav {
   overflow: hidden;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
-  font-family: 'Courier New';
   float: left;
+  display: block;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: 'Courier New';
   font-size: 17px;
 }
 
-  /* Add a color to visited link */
-.topnav a:visited {
-  color: black;
-}
-
-/* Change the color of links on hover */
 .topnav a:hover {
   border-radius: 15px;
   background-color: #ddd;
   color: black;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   border-radius: 15px;
   background-color: black;
   color: white;
 }
+
+/* Hamburger icon (hidden on desktop) */
+.topnav .icon {
+  display: none;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 768px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav a.icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  .topnav.responsive {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .topnav.responsive a.icon {
+    border-bottom: none;
+  }
+
+}
+
 
 .hdr {
   font-family: 'Courier New';
@@ -79,7 +109,6 @@ p3 {
   text-align: justify;
 }
 
-
 /* 2 column containers */
 
 .flex-container {
@@ -88,9 +117,17 @@ p3 {
 }
 
 .flex-container2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 per row on desktop */
+  gap: 30px;  /* space between icons */
+  padding: 20px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-container2 a:nth-child(4) {
+  grid-column: 2 / 3;  /* center it in the middle column */
 }
 
 .img-container {
@@ -104,6 +141,24 @@ p3 {
 
 .center {
   text-align: center;
+  margin: 0 auto;
+}
+
+.center img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.poster {
+  display: flex;
+}
+
+/* Make images responsive and centered */
+.poster img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 /* Bullet list */
 
@@ -115,23 +170,61 @@ p3 {
   margin-right: 100px;
 }
 
-/* icons */
+/* Responsive iframe wrapper */
+.iframe-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 125%; /* 1000px / 800px = 1.25 aspect ratio */
+  overflow: hidden;
+  max-width: 800px; /* Optional: limit width on large screens */
+  max-height: 1000px;
+  margin: 0 auto;   /* Center on larger screens */
+}
 
-/*.icon_desc{*/
-/*  font-family: 'Courier New';*/
-/*  font-size: 25px;*/
-/*  margin-left: 100px;*/
-/*  margin-right: 100px;*/
-/*  text-align: justify;*/
-/*  !*visibility: hidden;*!*/
-/*  opacity: 0;*/
-/*}*/
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
-img.icons{
+/* Hide by default */
+.mobile-only,
+.desktop-only {
+  display: none;
+}
+
+/* Desktop: use fixed height */
+@media screen and (min-width: 769px) {
+  .iframe-container {
+    padding-top: 0;
+    height: 1000px;
+  }
+
+  .iframe-container iframe {
+    position: static;
+    width: 100%;
+    height: 1000px;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+.icons{
+  max-width: 100%;
+  height: auto;
+  width: 100%;        /* grow to fill column */
+  max-width: 400px;   /* but cap size */
   transition: .2s;
 }
 
-img.icons:hover{
+.icons:hover{
   transform: scale(1.2);
 }
 
@@ -153,75 +246,157 @@ img.media:hover{
 
 /* Photo gallery stuff */
 
-div.gallery {
-  border: 1px solid #ccc;
+.gallery-container {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-div.gallery img {
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* 3-column layout */
+.gallery-block-3 {
+  flex: 0 1 calc((100% - 10px) / 3); /* 2 gaps of 5px */
+}
+
+/* 5-column layout */
+.gallery-block-5 {
+  flex: 0 1 calc((100% - 20px) / 5); /* 4 gaps of 5px */
+}
+
+/* Tablet: 2 across */
+@media screen and (max-width: 768px) {
+  .gallery-block-3,
+  .gallery-block-5 {
+    flex: 0 1 calc((100% - 16px) / 2); /* 1 gap */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gallery-block-3,
+  .gallery-block-5 {
+    flex: 0 1 100%;
+  }
+}
+
+.gallery-block-3 img,
+.gallery-block-5 img {
   width: 100%;
   height: auto;
+  transition: transform 0.3s;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Landscape gallery layout */
-.responsive1 {
-  padding: 0 1px;
-  float: left;
-  width: 33.333332%;
-}
-
-@media only screen and (max-width: 800px) {
-  .responsive1 {
-    width: 49.99999%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive1 {
-    width: 100%;
-  }
-}
-
-/* Portrait gallery layout */
-.responsive2 {
-  padding: 0 1px;
-  float: right;
-  width: 19.99999%;
-}
-
-@media only screen and (max-width: 800px) {
-  .responsive2 {
-    width: 33.33332%;
-    margin: 6px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .responsive2 {
-    width: 100%;
-  }
-}
-
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-
-img.gallery{
-  transition: .3s;
-}
-
-img.gallery:hover{
-  transform: scale(1.2);
+.gallery-block-3 img:hover,
+.gallery-block-5 img:hover {
+  transform: scale(1.07);
 }
 
 img.gallery:active{
 	pointer-events: none;
+}
+
+
+
+/* ALL MOBILE CHANGES */
+
+@media screen and (max-width: 768px) {
+  .hdr {
+    font-family: 'Courier New';
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  .hdr2 {
+    font-family: 'Courier New';
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: left;
+  }
+
+  /* normal text */
+  p {
+    font-family: 'Courier New';
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: justify;
+  }
+
+  /* 2 col image hdr */
+  p2 {
+    font-family: 'Courier New';
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  /* 2 col image desc */
+  p3 {
+    font-family: 'Courier New';
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: center;  /* optional: center image/text on mobile */
+  }
+
+  .img-container,
+  .text-container {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  .iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .mobile img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ul_code {
+    margin-left: 10px;
+  }
+
+  .ul_center {
+    margin-right: 10px;
+  }
+
+  .flex-container2 {
+    grid-template-columns: repeat(2, 1fr);  /* 2 per row */
+  }
+
+  img.gallery{
+	  pointer-events: none;
+  }
+
+  .iframe-container {
+    height: 85vh;         /* Fill 90% of viewport height */
+    padding-top: 0;       /* Disable aspect ratio padding */
+    max-height: none;     /* Allow taller height */
+  }
+
+
+  .iframe-container iframe {
+    height: 85vh;        /* Ensure iframe also stretches fully */
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
 }

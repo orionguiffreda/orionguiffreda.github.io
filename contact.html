@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8">
     <title>Orion Guiffreda - Github Website - Contact Page</title>
     <link rel="stylesheet" href="./css/styles.css">
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth <= 768) {  // Only reorder on mobile
+          const nav = document.querySelector(".topnav");
+          const activeLink = nav.querySelector("a.active");
+          if (activeLink) {
+            nav.insertBefore(activeLink, nav.firstChild);
+          }
+        }
+      });
+    </script>
 </head>
+<script>
+  function toggleNav() {
+    var nav = document.querySelector(".topnav");
+    nav.classList.toggle("responsive");
+  }
+</script>
 <body>
     <nav>
         <div class="topnav">
@@ -15,6 +34,7 @@
           <a href="media.html">Media</a>
           <a href="photos.html">Photos</a>
           <a class="active" href="contact.html">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="toggleNav()">&#9776;</a>
         </div>
     </nav>
         <div class="hdr">
@@ -27,8 +47,6 @@
                 class="icons"
                 src="./images/LinkedIn_icon.svg.png"
                 alt="LinkedIn Logo"
-                width="400"
-                height="400"
             >
         </a>
         <a href="https://github.com/orionguiffreda">
@@ -36,8 +54,6 @@
                 class="icons"
                 src="./images/Octicons-mark-github.svg"
                 alt="Github Logo"
-                width="400"
-                height="400"
             >
         </a>
         <a href="https://oriong.pixieset.com">
@@ -45,8 +61,6 @@
                 class="icons"
                 src="./images/unnamed.png"
                 alt="Photos Logo"
-                width="400"
-                height="400"
             >
         </a>
         <a href="mailto:oriogui@umd.edu">
@@ -54,8 +68,6 @@
                 class="icons"
                 src="./images/Gmail_icon.svg"
                 alt="Gmail Logo"
-                width="400"
-                height="400"
             >
         </a>
     </div>
