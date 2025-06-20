@@ -198,6 +198,27 @@ p3 {
   display: none;
 }
 
+.download-link {
+  margin: auto;
+  text-align: center;
+}
+
+.download-link button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .2s
+}
+
+.download-link button:hover {
+  background-color: #555;
+  transform: scale(1.07)
+}
+
 /* Desktop: use fixed height */
 @media screen and (min-width: 769px) {
   .iframe-container {
